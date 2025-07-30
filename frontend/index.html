@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan AI 数据统计面板</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="header__title">Ryan AI 数据统计面板</h1>
+            <p class="header__subtitle">实时数据汇总&排行榜👑</p>
+        </header>
+
+        <div class="controls">
+            <div class="controls__group">
+                <label for="start-time">开始时间</label>
+                <input type="datetime-local" id="start-time">
+            </div>
+            <div class="controls__group">
+                <label for="end-time">结束时间</label>
+                <input type="datetime-local" id="end-time">
+            </div>
+            <button id="query-button" class="button--primary">查询</button>
+        </div>
+
+        <div id="loader" class="loader hidden">
+            <div class="loader__spinner"></div>
+            <p>正在加载数据...</p>
+        </div>
+
+        <div id="error-message" class="error-box hidden"></div>
+
+        <div id="results-container" class="results hidden">
+            <div class="summary-cards">
+                <div class="card">
+                    <h3 class="card__title">总 Tokens 消耗</h3>
+                    <p class="card__value" id="total-tokens">0</p>
+                </div>
+                <div class="card">
+                    <h3 class="card__title">总积分花费</h3>
+                    <p class="card__value" id="total-credit">0</p>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <h3 class="chart-container__title">模型成本分布 (积分)</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="model-cost-chart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3 class="chart-container__title">模型消耗 Tokens 分布</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="model-token-chart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3 class="chart-container__title">用户成本排行 (积分)</h3>
+                    <div class="chart-wrapper chart-wrapper--bar">
+                        <canvas id="user-cost-chart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3 class="chart-container__title">用户消耗 Tokens 排行</h3>
+                    <div class="chart-wrapper chart-wrapper--bar">
+                        <canvas id="user-token-chart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3 class="chart-container__title" id="weekly-chart-title">上周用户 Tokens 竞速榜</h3>
+                    <div class="chart-wrapper chart-wrapper--bar">
+                        <canvas id="weekly-user-token-chart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3 class="chart-container__title" id="monthly-chart-title">本月用户 Tokens 竞速榜</h3>
+                    <div class="chart-wrapper chart-wrapper--bar">
+                        <canvas id="monthly-user-token-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
