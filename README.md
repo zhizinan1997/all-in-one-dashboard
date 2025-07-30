@@ -44,7 +44,12 @@ data-statistics-dashboard/
 ├── screenshot.png      # 项目截图
 └── README.md          # 项目说明
 ```
+**重要提醒：**
 
+1. **数据库配置**：请务必在 `backend.py` 文件中配置您自己的 PostgreSQL 数据库连接信息
+2. **项目截图**：建议添加项目的实际运行截图到 `screenshot.png` 
+3. **个人信息**：请将 README 中的占位符信息（如邮箱、GitHub 用户名等）替换为您的实际信息
+4. **许可证**：如需要，请添加相应的 LICENSE 文件
 ## 🛠️ 安装和运行
 
 ### 前端部署
@@ -170,13 +175,6 @@ python -m uvicorn backend:app --host 0.0.0.0 --port 8001
 ---
 
 ⭐ 如果这个项目对您有帮助，请给个 Star 支持一下！
-```
 
-**重要提醒：**
-
-1. **数据库配置**：请务必在 `backend.py` 文件中配置您自己的 PostgreSQL 数据库连接信息
-2. **项目截图**：建议添加项目的实际运行截图到 `screenshot.png` 
-3. **个人信息**：请将 README 中的占位符信息（如邮箱、GitHub 用户名等）替换为您的实际信息
-4. **许可证**：如需要，请添加相应的 LICENSE 文件
 
 
