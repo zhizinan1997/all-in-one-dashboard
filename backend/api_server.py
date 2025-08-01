@@ -14,7 +14,9 @@ from psycopg2.extras import DictCursor
 # --- 配置 ---
 DATABASE_URL = os.getenv(
     "DATABASE_URL", 
-     postgres://postgres:密码@IP: 端口/数据库名"
+
+     "postgres://postgres:zzn1997912@185.243.240.104:5432/postgres"
+
 )
 
 log = logging.getLogger(__name__)
